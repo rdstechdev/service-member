@@ -48,7 +48,14 @@ namespace Member.Context
                 entity.Property(e => e.Idpersonal).HasColumnName("IDPERSONAL");
 
                 entity.Property(e => e.Totalpremium).HasColumnName("TOTALPREMIUM");
+
+                entity.HasOne(d => d.IdpersonalNavigation)
+                    .WithMany(p => p.Memberlists)
+                    .HasForeignKey(d => d.Idpersonal)
+                    .HasConstraintName("MEMBER_PERSON");
             });
+
+            modelBuilder.Entity<Memberlist>().Navigation(e => e.IdpersonalNavigation).AutoInclude();
 
             modelBuilder.Entity<Personallist>(entity =>
             {

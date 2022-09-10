@@ -17,7 +17,8 @@ namespace Member.Services
             if (param.Any())
             {
                 FilterConstructor _filter = new FilterConstructor(param);
-                list = db.Memberlists.Where(_filter.Construct(),_filter.Expressions()).ToList();
+                list = db.Memberlists.Where(_filter.Construct(),_filter.Expressions())
+                    .ToList();
                 pageData.Currentpage = 1;
                 pageData.Totalpage = (int)Math.Ceiling((decimal)list.Count/10);
                 pageData.Totaldata = list.Count;

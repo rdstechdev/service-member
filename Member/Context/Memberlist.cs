@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Member.Context
 {
@@ -10,5 +12,8 @@ namespace Member.Context
         public double? Totalpremium { get; set; }
         public string? Entryby { get; set; }
         public DateTime? Entrydate { get; set; }
+
+        [JsonPropertyName("personallist")]
+        public virtual Personallist? IdpersonalNavigation { get; set; }
     }
 }

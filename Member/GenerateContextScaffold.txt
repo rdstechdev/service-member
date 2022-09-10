@@ -1,0 +1,1 @@
+Scaffold-DbContext "data source=DESKTOP-DASMNO1;initial catalog=Member;persist security info=True;user id=sa;password=Password123;" Microsoft.EntityFrameworkCore.SqlServer -Namespace "Member.Context" -OutputDir "Context" -Force
